@@ -3,6 +3,12 @@ aaa_authorization:
     default: local
 aaa_root:
   disabled: true
+banners:
+  motd: 'You shall not pass. Unless you are authorized. Then you shall pass.
+
+    EOF
+
+    '
 config_end: true
 daemon_terminattr:
   cvaddrs:
@@ -80,6 +86,15 @@ local_users:
   sha512_password: $6$arista$T352LBc7yGk5d0vnUGGOE4xKe8Ulh5dnk1SPoFfX3zX84DhWFRU8NdslR4qqsoloG.jdf8gChoKDwLqTApMcS1
   ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDL9wVi3Ee3NFAgFlGbOBF97YGIssPCPVhp+GcgcVH2WVSgSpVje+e71x4vbGExY0v3mxJHr0X4pXYmA6+amH9/gcdr3z8TuGwoMkizTPsDekSvTEyn5ReoQxzRLaMbeX2CwvUP0vJ+GCuFGQWI9fOlJ38zfqAhd56GYhg9fD9R8ThaJfu9lWMuXA3Ce6VnJC6520bdhxek/SHRq7WGBt5VE6oVmm0atsfh31Q62jVb4yOwzg19gyiMCAXrAaRkNF2566lo1MwWifpuU8hFmqnbYYuh8rnz/A90jcRmquXtEDKWHDSANhgdmSDSmgm/pYjSHVcn2FLXP3a4rWaFPReH
     arista@toronto-day2-4-1c55ad53-eos
+logging:
+  vrfs:
+  - name: default
+    source_interface: Management0
+    hosts:
+    - name: 10.200.0.108
+      protocol: udp
+    - name: 10.200.1.108
+      protocol: udp
 management_api_http:
   enable_https: true
   enable_vrfs:
